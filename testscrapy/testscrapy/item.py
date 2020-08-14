@@ -7,3 +7,5 @@ class Rakuten(Item):
   point = Field()
   price = Field()
   rating = Field()
+  description = Field()
+  freeship = Field()

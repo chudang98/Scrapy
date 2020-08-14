@@ -1,15 +1,13 @@
-#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 BOT_NAME = 'testscrapy'
 
 SPIDER_MODULES = ['testscrapy.spiders']
 NEWSPIDER_MODULE = 'testscrapy.spiders'
 
-
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'testscrapy (+http://www.yourdomain.com)'
-
-# Obey robots.txt rules
 ROBOTSTXT_OBEY = True
+
+ITEM_PIPELINES = {
+  'testscrapy.pipelines.TestscrapyPipeline' : 12
+}
 
 SPLASH_URL = 'http://localhost:8050'
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
