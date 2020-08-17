@@ -3,7 +3,7 @@ BOT_NAME = 'testscrapy'
 SPIDER_MODULES = ['testscrapy.spiders']
 NEWSPIDER_MODULE = 'testscrapy.spiders'
 
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 ITEM_PIPELINES = {
   'testscrapy.pipelines.TestscrapyPipeline' : 12
@@ -15,7 +15,8 @@ HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 COOKIES_ENABLED = True # Nếu cần dùng Cookie
 SPLASH_COOKIES_DEBUG = False
 SPIDER_MIDDLEWARES = {
-    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+  'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+  # 'scrapy.contrib.spidermiddleware.referer.RefererMiddleware': True,
 }
 DOWNLOADER_MIDDLEWARES = {
   'scrapy_splash.SplashCookiesMiddleware': 723,
@@ -23,4 +24,3 @@ DOWNLOADER_MIDDLEWARES = {
   'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
   'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': 400,
 }
-FEED_FORMAT = 'json'
