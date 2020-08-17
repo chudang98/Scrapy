@@ -1,11 +1,12 @@
-import scrapy
 from scrapy.item import Field, Item
 
-class Rakuten(Item):
-  name = Field()
-  item_number = Field()
-  point = Field()
+class RakutenItem(Item):
+  _id = Field()
+  title = Field()
+  brand = Field()
   price = Field()
-  rating = Field()
-  description = Field()
-  freeship = Field()
+  inStock = Field()
+  featureBullet = Field()
+  image = Field()
+  urlReview = Field()
+  urlProduct = Field()
